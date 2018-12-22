@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+</h:head> 
+<body> 
+<h:form>
+
+<h:panelGrid columns="2" class="table">
+<f:facet name="header">
+Gestion des Etudiants
+</f:facet>
+
+<h:outputText value="CNE *" ></h:outputText>
+<h:outputText value="#{etudiant.cne}" ></h:outputText>
+
+<h:outputText value="Nom *" ></h:outputText>
+<h:outputText value="#{etudiant.nom}" ></h:outputText>
+
+<h:outputText value="Prenom *" ></h:outputText>
+<h:outputText value="#{etudiant.prenom}" ></h:outputText>
+
+<h:outputText value="Ville *" ></h:outputText>
+<h:outputText value="#{etudiant.ville}" ></h:outputText>
+
+<h:outputText value="Date de naissance *" ></h:outputText>
+<h:outputText value="#{etudiant.dateN}" ><f:convertDateTime timeStyle="full" /></h:outputText>
+
+<h:outputText value="Bourse(DH) " ></h:outputText>
+<h:outputText value="#{etudiant.bourse}" ><f:convertNumber type="currency"
+currencySymbol="dh" /></h:outputText>
+
+
+<h:commandButton  value="Retour" action="index" />
+
+</h:panelGrid>
+
+</h:form>
+</body> 
+</html>

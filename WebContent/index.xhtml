@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+</h:head> 
+<body> 
+<h:form>
+
+<h:panelGrid columns="3" class="table">
+<f:facet name="header">
+Gestion des Etudiants
+</f:facet>
+<h:outputText value="CNE *" ></h:outputText>
+<h:inputText id="idcne" value="#{etudiant.cne}" required="true" requiredMessage="CNE obligatoire !!" 
+validatorMessage="CNE doit avoir au moins 6 nombres">
+<f:validateLength  minimum="6" /></h:inputText>
+<h:message for="idcne" style="color:red;background-color: white;padding: 7px;margin: 10px;"/>
+<h:outputText value="Nom *" ></h:outputText>
+<h:inputText id="idnom" value="#{etudiant.nom}" required="true" requiredMessage="Nom obligatoire !!" ></h:inputText>
+<h:message for="idnom" style="color:red;background-color: white;padding: 7px;margin: 10px;text-align:left"/>
+
+<h:outputText value="Prenom *" ></h:outputText>
+<h:inputText id="idprenom" value="#{etudiant.prenom}" required="true" requiredMessage="Prénom obligatoire !!"></h:inputText>
+<h:message for="idprenom" style="color:red;background-color: white;padding: 7px;margin: 10px;"/>
+
+<h:outputText value="Ville *" ></h:outputText>
+<h:inputText id="idville" value="#{etudiant.ville}" required="true" requiredMessage="Ville obligatoire !!" 
+validatorMessage="Le nombre de caractères du champs ville ne doit pas dépasser 10 caractères" >
+<f:validateLength  maximum="10" /></h:inputText>
+<h:message for="idville" style="color:red;background-color: white;padding: 7px;margin: 10px;"/>
+
+<h:outputText  value="Date de naissance *" ></h:outputText>
+<h:inputText id="iddate" value="#{etudiant.dateN}" converterMessage="Date:Unknown Format" required="true" 
+requiredMessage="Date obligatoire !!" >
+<f:convertDateTime pattern="mm/dd/yyyy"></f:convertDateTime></h:inputText>
+<h:message for="iddate" style="color:red;background-color: white;padding: 7px;margin: 10px;"/>
+
+<h:outputText value="Bourse(DH) " ></h:outputText>
+<h:inputText id="idbourse" value="#{etudiant.bourse}" validatorMessage="La bourse doit être entre 700 et 1000">
+<f:validateLongRange minimum="700" maximum="1000" /></h:inputText>
+<h:message for="idbourse" style="color:red;background-color: white;padding: 7px;margin: 10px;"/>
+
+
+<h:commandButton  value="Valider" action="affichage"/>
+<h:commandButton value="Supprimer" />
+<h:outputText></h:outputText>
+<h:commandButton  value="Modifier" />
+<h:commandButton  value="Rechercher" />
+
+
+</h:panelGrid>
+
+</h:form>
+</body> 
+</html>
